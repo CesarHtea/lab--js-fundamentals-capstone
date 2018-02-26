@@ -20,6 +20,45 @@
 *
 **/
 
+console.log("===== Ex07 url-encoded URL's from a normal string. =====")
+
+// entra un string
+// se descompone en cada uno de sus elementos
+	// queda un array
+// cada elemento del array se sustituye de acuerdo al encoding chart
+// array.join
+
+function encodeURL(string) {
+	let urlString = ''
+	let primeroArray = []
+	primeroArray = string.split('')
+	for (i = 0 ; i < primeroArray.length ; i++) {
+		let variableTemporal = ''
+		if (primeroArray[i] === ' ') {
+			variableTemporal = '%20'
+		} 
+		else if (primeroArray[i] === '!') {
+			variableTemporal = '%21'
+		} 
+		else if (primeroArray[i] === '"') {
+			variableTemporal = '%22'
+		} 
+		else if (primeroArray[i] === '$') {
+			variableTemporal = '%24'
+		} 
+		else if (primeroArray[i] === '%') {
+			variableTemporal = '%25'
+		} 
+		else if (primeroArray[i] === "'") {
+			variableTemporal = "%27"
+		} 
+		else variableTemporal = primeroArray[i]
+	urlString += variableTemporal
+	}
+	return urlString 
+}
+const printEx07 = encodeURL("20% of $100")
+console.log(printEx07)
 
 
 
@@ -50,3 +89,4 @@ console.log("[4] Should return '20%25%20of%20%24100'")
 console.assert(encodedURL3 === "20%25%20of%20%24100")
 console.log("=================================================================================");
 console.log();
+

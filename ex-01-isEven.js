@@ -6,6 +6,20 @@
  *
 **/
 
+console.log("===== Ex-01-isEven (Par) =====")
+
+// entra un numero
+// retorna true si el numero es par
+
+function isEven(numberAEvaluar) {
+	let bool = false
+	if (numberAEvaluar % 2 === 0) {
+		bool = true
+	}
+	return bool
+}
+const printEx01 = isEven(17)
+console.log(printEx01)
 
 
 

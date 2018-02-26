@@ -6,7 +6,26 @@
  *
 **/
 
+console.log("===== Ex02 Get Capital Letters =====")
 
+// entra un string
+// sale un array que contiene all the capital letters de la string
+
+function getCapitalLetters(string) {
+	// convertir string a array
+	// evaluar cada array[i] = capital letter
+	// regresar solo las capital letter en un array
+	let arrayDeSalida = []
+	for (i = 0 ; i < string.length ; i++) {
+		if ( (string[i] === string[i].toUpperCase()) && (string[i] !== " ") && (string[i] !== ";" && (string[i] !== ".")) ) {
+			arrayDeSalida.push(string[i])
+		}
+	}
+	return arrayDeSalida
+}
+stringAEvaluar = ('TLDR; My mother gave Nancy nothing for Xmas.')
+const printEx02 = getCapitalLetters(stringAEvaluar)
+console.log(printEx02)
 
 
 
@@ -48,9 +67,11 @@ console.log("[5] Should return 'X' in the 6th index");
 console.assert( output_2[6] === 'X' )
 console.log("=====================================");
 
-//Explorer Mode: Make these tests pass
-//---------------------
-// var output_3 = getCapitalLetters('TLDR; My mother gave Nancy nothing for Xmas.')
-// console.assert( output_2.length === 7 )
-// console.assert( output_2[3] === 'R' )
-// console.assert( output_2[6] === 'X' )
+// Explorer Mode: Make these tests pass
+// ---------------------
+var output_3 = getCapitalLetters('TLDR; My mother gave Nancy nothing for Xmas.')
+console.assert( output_2.length === 7 )
+console.assert( output_2[3] === 'R' )
+console.assert( output_2[6] === 'X' )
+
+

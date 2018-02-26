@@ -9,6 +9,34 @@
  *
 **/
 
+console.log('===== Ex06 pluck =====')
+
+// dado un array de objetos y una propiedad
+// extraer todos los valores de esa propiedad de cada uno de los objetos
+// retornar un array con dichos valores
+
+const otroStooges = [
+   {name: 'moe', age: 40, hairStyle: "bowl cut" },
+   {name: 'larry', age: 50, hairStyle: "balding"},
+   {name: 'curly', age: 53, hairStyle: "buzzed"},
+   {name: 'shemp', age: 62, hairStyle: "parted"},
+   {name: 'joe', age: 47, hairStyle: "bald"}
+]
+
+function pluck(arrayOfObjects, propiedad) {
+	let arrayPropiedades = []
+	for (i = 0 ; i < arrayOfObjects.length ; i++) {
+		let propiedadIndividual = ''
+		propiedadIndividual = arrayOfObjects[i][propiedad]
+		arrayPropiedades.push(propiedadIndividual)
+	}
+	return arrayPropiedades
+}
+const printEx06 = pluck(otroStooges, 'hairStyle')
+console.log(printEx06)
+
+
+
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 
@@ -68,3 +96,4 @@ console.log("[9] Should return 47 in the 5th index");
 console.assert( outputArray_3[4] === 47 )
 console.log("===========================================");
 console.log();
+
